@@ -20,7 +20,9 @@
 		5B8C4C9B2B4AA44F0099C589 /* MainSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B8C4C9A2B4AA44F0099C589 /* MainSettingViewController.swift */; };
 		5B8C4C9D2B4AA4690099C589 /* ShopingListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B8C4C9C2B4AA4690099C589 /* ShopingListViewController.swift */; };
 		5B8C4C9F2B4AA6670099C589 /* ShoppingListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B8C4C9E2B4AA6670099C589 /* ShoppingListTableViewCell.swift */; };
-		5B8C4CA12B4AA7380099C589 /* ShoppingSchdule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B8C4CA02B4AA7380099C589 /* ShoppingSchdule.swift */; };
+		5B8C4CA12B4AA7380099C589 /* ShoppingWish.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B8C4CA02B4AA7380099C589 /* ShoppingWish.swift */; };
+		5BA6A7922B4AF0B500EF902A /* UserDefaultManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA6A7912B4AF0B500EF902A /* UserDefaultManager.swift */; };
+		5BA6A7942B4AF0BE00EF902A /* UserDefaultWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA6A7932B4AF0BE00EF902A /* UserDefaultWrapper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,7 +41,9 @@
 		5B8C4C9A2B4AA44F0099C589 /* MainSettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainSettingViewController.swift; sourceTree = "<group>"; };
 		5B8C4C9C2B4AA4690099C589 /* ShopingListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShopingListViewController.swift; sourceTree = "<group>"; };
 		5B8C4C9E2B4AA6670099C589 /* ShoppingListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingListTableViewCell.swift; sourceTree = "<group>"; };
-		5B8C4CA02B4AA7380099C589 /* ShoppingSchdule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingSchdule.swift; sourceTree = "<group>"; };
+		5B8C4CA02B4AA7380099C589 /* ShoppingWish.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingWish.swift; sourceTree = "<group>"; };
+		5BA6A7912B4AF0B500EF902A /* UserDefaultManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultManager.swift; sourceTree = "<group>"; };
+		5BA6A7932B4AF0BE00EF902A /* UserDefaultWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultWrapper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +85,7 @@
 		5B8C4C7F2B4AA1E10099C589 /* PracticeTableView */ = {
 			isa = PBXGroup;
 			children = (
+				5BA6A7902B4AF0A300EF902A /* Storage */,
 				5B7812842B4AD1E800A285A3 /* Extensions */,
 				5B8C4C972B4AA2000099C589 /* Controller */,
 				5B8C4C962B4AA1FA0099C589 /* View */,
@@ -99,7 +104,7 @@
 		5B8C4C952B4AA1F40099C589 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				5B8C4CA02B4AA7380099C589 /* ShoppingSchdule.swift */,
+				5B8C4CA02B4AA7380099C589 /* ShoppingWish.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -121,6 +126,15 @@
 				5B8C4C9C2B4AA4690099C589 /* ShopingListViewController.swift */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		5BA6A7902B4AF0A300EF902A /* Storage */ = {
+			isa = PBXGroup;
+			children = (
+				5BA6A7912B4AF0B500EF902A /* UserDefaultManager.swift */,
+				5BA6A7932B4AF0BE00EF902A /* UserDefaultWrapper.swift */,
+			);
+			path = Storage;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -194,12 +208,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5B8C4CA12B4AA7380099C589 /* ShoppingSchdule.swift in Sources */,
+				5B8C4CA12B4AA7380099C589 /* ShoppingWish.swift in Sources */,
 				5B8C4C9B2B4AA44F0099C589 /* MainSettingViewController.swift in Sources */,
 				5B8C4C9D2B4AA4690099C589 /* ShopingListViewController.swift in Sources */,
 				5B8C4C992B4AA4210099C589 /* ConcentrationModeSettingViewController.swift in Sources */,
+				5BA6A7942B4AF0BE00EF902A /* UserDefaultWrapper.swift in Sources */,
 				5B8C4C9F2B4AA6670099C589 /* ShoppingListTableViewCell.swift in Sources */,
 				5B8C4C852B4AA1E10099C589 /* ViewController.swift in Sources */,
+				5BA6A7922B4AF0B500EF902A /* UserDefaultManager.swift in Sources */,
 				5B7812882B4AD2FD00A285A3 /* RawRepresentable+Extension.swift in Sources */,
 				5B8C4C812B4AA1E10099C589 /* AppDelegate.swift in Sources */,
 				5B7812862B4AD1F800A285A3 /* Cellection+Extension.swift in Sources */,

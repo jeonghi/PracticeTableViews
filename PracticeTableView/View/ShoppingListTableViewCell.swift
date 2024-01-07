@@ -8,7 +8,7 @@
 import UIKit
 
 class ShoppingListTableViewCell: UITableViewCell {
-  @IBOutlet var leadingImage: UIImage!
+  @IBOutlet var leadingButton: UIButton!
   @IBOutlet var titleTextField: UITextField!
-  @IBOutlet var trailingImage: UIImage!
+  @IBOutlet var trailingButton: UIButton!
 }

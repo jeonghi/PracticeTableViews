@@ -19,8 +19,7 @@ class MainSettingViewController: UIViewController {
 }
 
 // MARK: 델리게이트 설정
-extension MainSettingViewController: UITableViewDelegate {
-}
+extension MainSettingViewController: UITableViewDelegate {}
 
 // MARK: 데이터 소스 설정 - cell 정의
 extension MainSettingViewController: UITableViewDataSource {
