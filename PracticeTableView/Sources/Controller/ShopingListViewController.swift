@@ -72,15 +72,24 @@ extension ShopingListViewController: UITableViewDataSource {
     // 모델 상태에 따라 이미지 바뀌도록 변경필요
     cell.leadingButton.setImage(.checkmark, for: .normal)
     cell.trailingButton.setImage(.checkmark, for: .normal)
-    
     cell.titleTextField.text = currShoppingWish.content
     
     // 선택됐을때 별도 스타일 지정 안함
     cell.selectionStyle = .none
     cell.backgroundView?.backgroundColor = .lightGray
     
+    // 셀의 엑션 지정c
     return cell
   }
 }
 
-extension ShopingListViewController: UITableViewDelegate {}
+extension ShopingListViewController: UITableViewDelegate {
+  
+  func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
+    return .none
+  }
+}
+
+extension ShopingListViewController {
+  
+}
