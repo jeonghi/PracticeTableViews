@@ -12,3 +12,8 @@ class ShoppingListTableViewCell: UITableViewCell {
   @IBOutlet var titleTextField: UITextField!
   @IBOutlet var trailingButton: UIButton!
 }
+
+extension ShoppingListTableViewCell {
+  @objc func tappedCheckButton(){}
+  @objc func tappedImportantButton(){}
+}
