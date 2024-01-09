@@ -16,6 +16,9 @@ final class UserDefaultManager {
   
   @UserDefaultWrapper(key:Key.매거진.rawValue, defaultValue: MagazineInfo.dummyMagazine)
   static var magazineInfoList: [Magazine]
+  
+  @UserDefaultWrapper(key: Key.여행인기도시.rawValue, defaultValue: CityInfo.city)
+  static var popularCityList: [City]
 }
 
 extension UserDefaultManager {
@@ -23,5 +26,6 @@ extension UserDefaultManager {
   enum Key: String {
     case 쇼핑위시리스트
     case 매거진
+    case 여행인기도시
   }
 }
