@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct City: Identifiable {
+struct City: Identifiable, Codable {
   var id: UUID = UUID()
   var city_name: String
   var city_english_name: String
