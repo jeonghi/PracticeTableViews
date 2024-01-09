@@ -11,6 +11,6 @@ struct ShoppingWish: Identifiable, Codable {
   var id: UUID = .init()
   var isChecked: Bool = false
   var content: String
-  var isImportant: Bool = false
+  var isFavorite: Bool = false
   var createdAt: Date = Date()
 }

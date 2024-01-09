@@ -36,7 +36,6 @@ class ShopingListViewController: UIViewController {
     textField.text = ""
     reloadTable()
   }
-  
   @IBAction func tappedAroundView(_ sender: Any) {
     self.textField.endEditing(true)
   }
@@ -51,7 +50,6 @@ extension ShopingListViewController {
   func configUI(){
     configButtonUI()
   }
-  
   func configButtonUI(){
     addButton.layer.cornerRadius = 6
     addButton.titleLabel?.textColor = .black
@@ -65,31 +63,27 @@ extension ShopingListViewController: UITableViewDataSource {
   }
   
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    
     guard let cell = tableView.dequeueReusableCell(withIdentifier: "shoppingListTableViewCell", for: indexPath) as? ShoppingListTableViewCell, let currShoppingWish = shoppingWishList[safe: indexPath.row] else {
       return .init()
     }
     
-    // 모델 상태에 따라 이미지 바뀌도록 변경필요
-    cell.leadingButton.setImage(.checkmark, for: .normal)
-    cell.trailingButton.setImage(.checkmark, for: .normal)
-    cell.titleTextField.text = currShoppingWish.content
+    cell.model = currShoppingWish
+    cell.updateUI()
     
     // 선택됐을때 별도 스타일 지정 안함
+//    cell.tag = indexPath.row
     cell.selectionStyle = .none
     cell.backgroundView?.backgroundColor = .lightGray
     
-    // 셀의 엑션 지정c
+    
+    // 셀의 엑션 지정
     return cell
   }
 }
 
 extension ShopingListViewController: UITableViewDelegate {
-  
   func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
     return .none
   }
-}
-
-extension ShopingListViewController {
-  
 }
