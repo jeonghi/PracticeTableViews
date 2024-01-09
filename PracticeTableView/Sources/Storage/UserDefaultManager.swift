@@ -13,11 +13,15 @@ final class UserDefaultManager {
   
   @UserDefaultWrapper(key: Key.쇼핑위시리스트.rawValue, defaultValue: [ShoppingWish.ID: ShoppingWish]())
   static var shoppingWishDict: [ShoppingWish.ID: ShoppingWish]
+  
+  @UserDefaultWrapper(key:Key.매거진.rawValue, defaultValue: MagazineInfo.dummyMagazine)
+  static var magazineInfoList: [Magazine]
 }
 
 extension UserDefaultManager {
   /// 키 정의
   enum Key: String {
     case 쇼핑위시리스트
+    case 매거진
   }
 }
