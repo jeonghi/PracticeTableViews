@@ -29,6 +29,7 @@ class MagazineTableViewController: UITableViewController {
     }
     
     cell.photoImage.kf.setImage(with: magazine.photo_image)
+    cell.photoImage.layer.cornerRadius = 100
     cell.dateLabel.text = magazine.date?.toString()
     cell.subTitleLabel.text = magazine.subtitle
     cell.titleLabel.text = magazine.title
