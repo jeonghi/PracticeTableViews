@@ -27,9 +27,22 @@ class PopularCityViewController: UIViewController {
   @IBOutlet var tab: UISegmentedControl!
   @IBOutlet var cityCollectionView: UICollectionView!
   
-  // MARK: Life cycle
+  // MARK: IBAction
+  @IBAction func selectSegment(_ tab: UISegmentedControl){
+    guard let selectedTab = Tab(tab.selectedSegmentIndex) else {
+      return
+    }
+    self.selectedTab = selectedTab
+    updateCollectionView() // 뷰 업데이트
+  }
+}
+
+// MARK: View Lify cycle
+extension PopularCityViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
+    
+    print("\(#function) \(cityCollectionView.frame.width)")
     
     // 셀 등록
     registerNib()
@@ -41,13 +54,23 @@ class PopularCityViewController: UIViewController {
     configLayout()
   }
   
-  // MARK: IBAction
-  @IBAction func selectSegment(_ tab: UISegmentedControl){
-    guard let selectedTab = Tab(tab.selectedSegmentIndex) else {
-      return
-    }
-    self.selectedTab = selectedTab
-    updateCollectionView() // 뷰 업데이트
+  override func viewWillLayoutSubviews() {
+    super.viewWillLayoutSubviews()
+    print(#function)
+  }
+  
+  override func viewDidLayoutSubviews() {
+    super.viewDidLayoutSubviews()
+    print(#function)
+    self.view.layoutIfNeeded()
+  }
+  
+  override func viewDidAppear(_ animated: Bool) {
+    print(#function)
+  }
+  
+  override func viewWillAppear(_ animated: Bool) {
+    print(#function)
   }
 }
 
@@ -67,14 +90,16 @@ extension PopularCityViewController: UICollectionViewDataSource {
     
     // 이미지
     cell.cityImage.kf.setImage(with: city.city_image)
-    
     cell.titleLabel.text = "\(city.city_name) | \(city.city_english_name)"
     cell.titleLabel.font = .systemFont(ofSize: 11, weight: .bold)
     
     cell.subTitleLabel.text = city.city_explain
     cell.subTitleLabel.font = .systemFont(ofSize: 9, weight: .regular)
     
-    cell.cityImage.layer.cornerRadius = cell.contentView.bounds.width/2
+    // 메인 쓰레드에서 마지막에 실행 (바로 반영됨)
+//    DispatchQueue.main.async {
+//      cell.cityImage.layer.cornerRadius = 0.5
+//    }
     
     return cell
   }
@@ -93,9 +118,10 @@ extension PopularCityViewController {
     
     let cellSpacing: CGFloat = 20
     let cellWidth: CGFloat = UIScreen.main.bounds.width / 3 - cellSpacing/2
-    let cellHeight: CGFloat = UIScreen.main.bounds.height / 2
+    let cellHeight: CGFloat = cellWidth / 3 * 4
     
     layout.itemSize = .init(width: cellWidth, height: cellHeight)
+    layout.sectionInset = .init(top: 5, left: 5, bottom: 5, right: 5)
     layout.minimumLineSpacing = cellSpacing
     layout.minimumInteritemSpacing = cellSpacing
     layout.scrollDirection = .vertical // 수직 스크롤
