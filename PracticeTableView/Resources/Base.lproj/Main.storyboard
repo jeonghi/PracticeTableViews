@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="B5f-NS-uxD">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Xsl-R9-lN2">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -473,6 +473,7 @@
                         <segue destination="2VC-1y-oUb" kind="relationship" relationship="viewControllers" id="xJG-wT-k6e"/>
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="GWp-ps-daW"/>
                         <segue destination="Q4m-3s-Xpv" kind="relationship" relationship="viewControllers" id="n5f-mf-yR3"/>
+                        <segue destination="B5f-NS-uxD" kind="relationship" relationship="viewControllers" id="lv4-Px-Dnd"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5U7-Kg-EOB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -498,7 +499,7 @@
             </objects>
             <point key="canvasLocation" x="199" y="2294"/>
         </scene>
-        <!--Popular City View Controller-->
+        <!--Item-->
         <scene sceneID="VzI-IV-Jgy">
             <objects>
                 <viewController id="B5f-NS-uxD" customClass="PopularCityViewController" customModule="PracticeTableView" customModuleProvider="target" sceneMemberID="viewController">
@@ -507,7 +508,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="bM9-1E-3p6">
-                                <rect key="frame" x="20" y="130" width="353" height="688"/>
+                                <rect key="frame" x="20" y="130" width="353" height="639"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="N4s-wZ-d7R">
                                     <size key="itemSize" width="128" height="128"/>
@@ -550,6 +551,7 @@
                             <constraint firstItem="emo-qK-b8e" firstAttribute="top" secondItem="nx6-5l-SXV" secondAttribute="top" constant="20" id="zeb-Le-2pS"/>
                         </constraints>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Item" id="uYT-QC-6RY"/>
                     <connections>
                         <outlet property="cityCollectionView" destination="bM9-1E-3p6" id="uJu-EA-YQc"/>
                         <outlet property="tab" destination="emo-qK-b8e" id="Bea-gd-RkL"/>
@@ -557,7 +559,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wcm-xd-uDY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="149" y="3251"/>
+            <point key="canvasLocation" x="-981" y="2294"/>
         </scene>
     </scenes>
     <resources>
@@ -569,10 +571,10 @@
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemGreenColor">
-            <color red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemPurpleColor">
-            <color red="0.68627450980000004" green="0.32156862749999998" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.68627450980392157" green="0.32156862745098042" blue="0.87058823529411766" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
