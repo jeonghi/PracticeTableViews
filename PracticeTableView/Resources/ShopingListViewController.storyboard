@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="0Qj-QQ-52i">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--쇼핑-->
+        <scene sceneID="dKM-QH-IdT">
+            <objects>
+                <viewController id="0Qj-QQ-52i" customClass="ShopingListViewController" customModule="PracticeTableView" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="g99-ff-oXW">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="jWu-d7-i9g">
+                                <rect key="frame" x="0.0" y="59" width="393" height="793"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <view key="tableHeaderView" contentMode="scaleToFill" id="FRN-De-lYp">
+                                    <rect key="frame" x="0.0" y="0.0" width="393" height="44"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <subviews>
+                                        <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="무엇을 구매하실 건가요?" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Oag-jt-GFX">
+                                            <rect key="frame" x="10" y="5" width="309" height="34"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="34" id="pBV-wE-10w"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <textInputTraits key="textInputTraits"/>
+                                        </textField>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ckB-aa-gcs">
+                                            <rect key="frame" x="329" y="4.6666666666666679" width="54" height="35"/>
+                                            <state key="normal" title="Button"/>
+                                            <buttonConfiguration key="configuration" style="plain" title="추가"/>
+                                            <connections>
+                                                <action selector="tappedAddButton:" destination="0Qj-QQ-52i" eventType="touchUpInside" id="kEM-A7-eHS"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    <constraints>
+                                        <constraint firstItem="Oag-jt-GFX" firstAttribute="leading" secondItem="FRN-De-lYp" secondAttribute="leading" constant="10" id="94p-ZT-GzD"/>
+                                        <constraint firstItem="ckB-aa-gcs" firstAttribute="centerY" secondItem="FRN-De-lYp" secondAttribute="centerY" id="WOf-5N-SvL"/>
+                                        <constraint firstItem="ckB-aa-gcs" firstAttribute="leading" secondItem="Oag-jt-GFX" secondAttribute="trailing" constant="10" id="aQJ-qr-UrW"/>
+                                        <constraint firstAttribute="trailing" secondItem="ckB-aa-gcs" secondAttribute="trailing" constant="10" id="cXB-du-XA2"/>
+                                        <constraint firstItem="Oag-jt-GFX" firstAttribute="centerY" secondItem="FRN-De-lYp" secondAttribute="centerY" id="f0m-KK-MUf"/>
+                                    </constraints>
+                                </view>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="shoppingListTableViewCell" rowHeight="69" id="19B-v1-kPs" customClass="ShoppingListTableViewCell" customModule="PracticeTableView" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="94" width="393" height="69"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="19B-v1-kPs" id="bl8-jb-hOi">
+                                            <rect key="frame" x="0.0" y="0.0" width="393" height="69"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yAZ-6w-ASv">
+                                                    <rect key="frame" x="10" y="10" width="49" height="49"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="yAZ-6w-ASv" secondAttribute="height" multiplier="1:1" id="Ymz-rn-wJr"/>
+                                                    </constraints>
+                                                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                    <connections>
+                                                        <action selector="tappedLeadingButton" destination="19B-v1-kPs" eventType="touchUpInside" id="bjv-eo-xIW"/>
+                                                    </connections>
+                                                </button>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3v2-hr-psA">
+                                                    <rect key="frame" x="334" y="10" width="49" height="49"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="3v2-hr-psA" secondAttribute="height" multiplier="1:1" id="Aem-BN-aEt"/>
+                                                    </constraints>
+                                                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                    <connections>
+                                                        <action selector="tappedTrailingButton" destination="19B-v1-kPs" eventType="touchUpInside" id="3cm-Aq-BH4"/>
+                                                    </connections>
+                                                </button>
+                                                <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aof-ux-ZkM">
+                                                    <rect key="frame" x="69" y="10" width="255" height="49"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                </textField>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="3v2-hr-psA" firstAttribute="leading" secondItem="aof-ux-ZkM" secondAttribute="trailing" constant="10" id="3ah-9s-j3k"/>
+                                                <constraint firstItem="yAZ-6w-ASv" firstAttribute="leading" secondItem="bl8-jb-hOi" secondAttribute="leading" constant="10" id="FWx-O8-jB1"/>
+                                                <constraint firstItem="aof-ux-ZkM" firstAttribute="centerY" secondItem="bl8-jb-hOi" secondAttribute="centerY" id="IFY-2v-T5Y"/>
+                                                <constraint firstItem="aof-ux-ZkM" firstAttribute="centerX" secondItem="bl8-jb-hOi" secondAttribute="centerX" id="VZW-y0-NHI"/>
+                                                <constraint firstItem="3v2-hr-psA" firstAttribute="top" secondItem="bl8-jb-hOi" secondAttribute="top" constant="10" id="ZiL-Q4-y2V"/>
+                                                <constraint firstItem="aof-ux-ZkM" firstAttribute="bottom" secondItem="yAZ-6w-ASv" secondAttribute="bottom" id="ZpX-ce-Ihf"/>
+                                                <constraint firstAttribute="trailing" secondItem="3v2-hr-psA" secondAttribute="trailing" constant="10" id="dQH-px-iTc"/>
+                                                <constraint firstAttribute="bottom" secondItem="yAZ-6w-ASv" secondAttribute="bottom" constant="10" id="fdr-vL-P8I"/>
+                                                <constraint firstItem="aof-ux-ZkM" firstAttribute="top" secondItem="yAZ-6w-ASv" secondAttribute="top" id="gtA-Ib-xRj"/>
+                                                <constraint firstAttribute="bottom" secondItem="3v2-hr-psA" secondAttribute="bottom" constant="10" id="jZo-KA-UGu"/>
+                                                <constraint firstItem="aof-ux-ZkM" firstAttribute="leading" secondItem="yAZ-6w-ASv" secondAttribute="trailing" constant="10" id="kDh-Pc-Wvp"/>
+                                                <constraint firstItem="yAZ-6w-ASv" firstAttribute="top" secondItem="bl8-jb-hOi" secondAttribute="top" constant="10" id="wPn-6P-R4f"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="leadingButton" destination="yAZ-6w-ASv" id="h9S-Sk-v7B"/>
+                                            <outlet property="titleTextField" destination="aof-ux-ZkM" id="SRU-e3-Xhd"/>
+                                            <outlet property="trailingButton" destination="3v2-hr-psA" id="2bd-El-oeY"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="gM0-Df-1UU"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="gM0-Df-1UU" firstAttribute="trailing" secondItem="jWu-d7-i9g" secondAttribute="trailing" id="15e-eD-F9x"/>
+                            <constraint firstAttribute="bottom" secondItem="jWu-d7-i9g" secondAttribute="bottom" id="TdW-8c-R8a"/>
+                            <constraint firstItem="jWu-d7-i9g" firstAttribute="leading" secondItem="gM0-Df-1UU" secondAttribute="leading" id="WZL-jd-hjP"/>
+                            <constraint firstItem="jWu-d7-i9g" firstAttribute="top" secondItem="gM0-Df-1UU" secondAttribute="top" id="Xge-5C-Sc3"/>
+                        </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="dWo-DX-3kN" appends="YES" id="08F-AU-4aP"/>
+                        </connections>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="쇼핑" id="TFo-NR-DrG"/>
+                    <connections>
+                        <outlet property="addButton" destination="ckB-aa-gcs" id="fou-rl-xSW"/>
+                        <outlet property="tableView" destination="jWu-d7-i9g" id="HdZ-uj-5Wp"/>
+                        <outlet property="textField" destination="Oag-jt-GFX" id="Spy-nG-KBG"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QnJ-ot-U2m" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="dWo-DX-3kN">
+                    <connections>
+                        <action selector="tappedAroundView:" destination="0Qj-QQ-52i" id="Roe-Vf-DUy"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="199.23664122137404" y="1484.5070422535211"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
