@@ -11,14 +11,41 @@ import Kingfisher
 
 class MagazineTableViewController: UITableViewController {
   
+  /// 매거진 목록
   var magazineList: [Magazine] {
     UserDefaultManager.magazineInfoList
   }
   
   override func viewDidLoad() {
     super.viewDidLoad()
+    configUI()
   }
+}
+
+// MARK: 뷰컨 기본설정
+extension MagazineTableViewController: UIViewControllerBaseConfiguration {
+  func configUI() {
+    return
+  }
+}
+
+// MARK: 테이블 뷰 관련 정의 - 델리게이트 부분
+extension MagazineTableViewController {
   
+  /// 셀을 선택했을때 호출
+  override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    let idx = indexPath.row
+    guard let magazine = magazineList[safe: idx], let url = magazine.link else {
+      return
+    }
+    let vc = SesacWebViewController()
+    vc.url = url
+    self.navigationController?.pushViewController(vc, animated: true)
+  }
+}
+
+// MARK: 테이블 뷰 관련 정의 - 데이터 소스 부분
+extension MagazineTableViewController {
   override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     return magazineList.count
   }
