@@ -19,6 +19,9 @@ final class UserDefaultManager {
   
   @UserDefaultWrapper(key: Key.여행인기도시.rawValue, defaultValue: CityInfo.city)
   static var popularCityList: [City]
+  
+  @UserDefaultWrapper(key: Key.도시상세정보.rawValue, defaultValue: TravelInfo.travel)
+  static var travelInfoList: [Travel]
 }
 
 extension UserDefaultManager {
@@ -27,5 +30,6 @@ extension UserDefaultManager {
     case 쇼핑위시리스트
     case 매거진
     case 여행인기도시
+    case 도시상세정보
   }
 }

@@ -50,10 +50,3 @@ class ShoppingListTableViewCell: UITableViewCell {
     titleTextField.text = model.content
   }
 }
-
-extension UIImage {
-  static let starFilled = UIImage(systemName: "star.fill")
-  static let star = UIImage(systemName: "star")
-  static let checkmarkFilled = UIImage(systemName: "checkmark.square.fill")
-  static let checkmark = UIImage(systemName: "checkmark.square")
-}
