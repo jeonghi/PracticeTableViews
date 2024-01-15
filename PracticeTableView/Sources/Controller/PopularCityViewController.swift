@@ -52,6 +52,8 @@ extension PopularCityViewController {
     
     // 레이아웃 설정
     configLayout()
+    
+    self.navigationItem.title = "인기도시"
   }
   
   override func viewWillLayoutSubviews() {
@@ -74,7 +76,18 @@ extension PopularCityViewController {
   }
 }
 
-extension PopularCityViewController: UICollectionViewDelegate {}
+extension PopularCityViewController: UICollectionViewDelegate {
+  func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+    
+    let id = String(describing: CityDetailInfoListViewController.self)
+    
+    let sb = UIStoryboard(name: id, bundle: nil)
+    
+    let vc = sb.instantiateViewController(identifier: id)
+    
+    let nc = self.navigationController?.pushViewController(vc, animated: true)
+  }
+}
 
 extension PopularCityViewController: UICollectionViewDataSource {
   

@@ -8,13 +8,14 @@
 
 import Foundation
 
-struct Travel: Codable {
+struct Travel: Codable, Identifiable {
+  var id: UUID = UUID()
   let title: String
   let description: String?
   let travel_image: URL?
   let grade: Double?
-  let save: Int?
-  let like: Bool?
+  var save: Int?
+  var like: Bool?
   let ad: Bool
   
   init(title: String, description: String?, travel_image: String?, grade: Double?, save: Int?, like: Bool?, ad: Bool) {
