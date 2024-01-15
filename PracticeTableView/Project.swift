@@ -11,7 +11,8 @@ let project = Project.makeAppModule(
   ],
   dependencies: [
     .package(product: "Kingfisher"),
-    .package(product: "Cosmos")
+    .package(product: "Cosmos"),
+    .sdk(name: "WebKit", type: .framework, status: .required),
   ],
   sources: [
     "Sources/**"
