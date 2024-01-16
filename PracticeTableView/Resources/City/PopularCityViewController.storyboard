@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Zkq-rq-Cug">
-                                <rect key="frame" x="20" y="130" width="353" height="688"/>
+                                <rect key="frame" x="20" y="186" width="353" height="632"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="QLT-X8-pxg">
                                     <size key="itemSize" width="128" height="128"/>
@@ -38,8 +38,15 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="Ywn-Ot-bph">
+                                <rect key="frame" x="20" y="69" width="353" height="56"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="xrX-ob-7Ri" id="990-ar-0yZ"/>
+                                </connections>
+                            </searchBar>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="jWT-0x-bwx">
-                                <rect key="frame" x="20" y="79" width="353" height="32"/>
+                                <rect key="frame" x="20" y="135" width="353" height="32"/>
                                 <segments>
                                     <segment title="모두"/>
                                     <segment title="국내"/>
@@ -53,13 +60,16 @@
                         <viewLayoutGuide key="safeArea" id="kIj-Zy-pIm"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="jWT-0x-bwx" firstAttribute="top" secondItem="kIj-Zy-pIm" secondAttribute="top" constant="20" id="K1F-aX-p68"/>
-                            <constraint firstItem="kIj-Zy-pIm" firstAttribute="trailing" secondItem="jWT-0x-bwx" secondAttribute="trailing" constant="20" id="Mbj-ib-alz"/>
-                            <constraint firstItem="jWT-0x-bwx" firstAttribute="leading" secondItem="kIj-Zy-pIm" secondAttribute="leading" constant="20" id="ZU6-cZ-MyE"/>
-                            <constraint firstItem="kIj-Zy-pIm" firstAttribute="bottom" secondItem="Zkq-rq-Cug" secondAttribute="bottom" id="ejm-Sh-xRL"/>
-                            <constraint firstItem="kIj-Zy-pIm" firstAttribute="trailing" secondItem="Zkq-rq-Cug" secondAttribute="trailing" constant="20" id="llM-Jf-pfx"/>
-                            <constraint firstItem="Zkq-rq-Cug" firstAttribute="top" secondItem="jWT-0x-bwx" secondAttribute="bottom" constant="20" id="v6b-iU-yz7"/>
-                            <constraint firstItem="Zkq-rq-Cug" firstAttribute="leading" secondItem="kIj-Zy-pIm" secondAttribute="leading" constant="20" id="vaL-g6-2ca"/>
+                            <constraint firstItem="Zkq-rq-Cug" firstAttribute="top" secondItem="jWT-0x-bwx" secondAttribute="bottom" constant="20" id="1pe-Hl-44x"/>
+                            <constraint firstItem="jWT-0x-bwx" firstAttribute="top" secondItem="Ywn-Ot-bph" secondAttribute="bottom" constant="10" id="2bz-db-jQC"/>
+                            <constraint firstItem="kIj-Zy-pIm" firstAttribute="trailing" secondItem="jWT-0x-bwx" secondAttribute="trailing" constant="20" id="78X-Ek-oey"/>
+                            <constraint firstItem="kIj-Zy-pIm" firstAttribute="trailing" secondItem="Ywn-Ot-bph" secondAttribute="trailing" constant="20" id="Cm3-18-PZV"/>
+                            <constraint firstItem="Ywn-Ot-bph" firstAttribute="top" secondItem="kIj-Zy-pIm" secondAttribute="top" constant="10" id="Lzn-Io-1TY"/>
+                            <constraint firstItem="kIj-Zy-pIm" firstAttribute="trailing" secondItem="Zkq-rq-Cug" secondAttribute="trailing" constant="20" id="PZ4-1c-eBx"/>
+                            <constraint firstItem="jWT-0x-bwx" firstAttribute="leading" secondItem="kIj-Zy-pIm" secondAttribute="leading" constant="20" id="m3W-Zd-SQm"/>
+                            <constraint firstItem="Zkq-rq-Cug" firstAttribute="leading" secondItem="kIj-Zy-pIm" secondAttribute="leading" constant="20" id="oB7-vz-0oC"/>
+                            <constraint firstItem="Ywn-Ot-bph" firstAttribute="leading" secondItem="kIj-Zy-pIm" secondAttribute="leading" constant="20" id="wat-gC-LYG"/>
+                            <constraint firstItem="Zkq-rq-Cug" firstAttribute="bottom" secondItem="kIj-Zy-pIm" secondAttribute="bottom" id="xV6-Iv-oJI"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item" id="Ikv-vk-DPq"/>
@@ -70,7 +80,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MRh-t8-cCZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-981" y="2294"/>
+            <point key="canvasLocation" x="-982.44274809160299" y="2293.6619718309862"/>
         </scene>
     </scenes>
     <resources>
