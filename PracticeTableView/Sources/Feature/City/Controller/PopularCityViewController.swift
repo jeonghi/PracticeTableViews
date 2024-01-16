@@ -90,7 +90,10 @@ extension PopularCityViewController {
 
 extension City {
   func hasKeyword(_ word: String) -> Bool {
-    self.city_english_name.contains(word) || self.city_name.contains(word) || self.city_explain.contains(word)
+    
+    let uppperedWord = word.uppercased()
+    
+    return self.city_english_name.uppercased().contains(uppperedWord) || self.city_name.uppercased().contains(uppperedWord) || self.city_explain.uppercased().contains(uppperedWord)
   }
 }
 
