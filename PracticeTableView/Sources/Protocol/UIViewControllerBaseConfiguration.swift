@@ -15,6 +15,7 @@ protocol UIViewControllerBaseConfiguration: AnyObject {
   @objc optional func configViewUI()
   @objc optional func configTextFieldUI()
   //.. etc...
+  @objc optional func connectToDelegate()
 }
 
 extension UIViewControllerBaseConfiguration {
@@ -22,5 +23,6 @@ extension UIViewControllerBaseConfiguration {
     configLabelUI?() // 와 이게 옵셔널 체이닝이 된다고?,,,,, swift 폼 미쳤다...
     configViewUI?()
     configTextFieldUI?()
+    connectToDelegate?()
   }
 }

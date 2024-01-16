@@ -75,6 +75,7 @@
                     <tabBarItem key="tabBarItem" title="Item" id="Ikv-vk-DPq"/>
                     <connections>
                         <outlet property="cityCollectionView" destination="Zkq-rq-Cug" id="CvK-Bu-FYf"/>
+                        <outlet property="searchBar" destination="Ywn-Ot-bph" id="v1b-RT-Ab7"/>
                         <outlet property="tab" destination="jWT-0x-bwx" id="rCd-EM-MHH"/>
                     </connections>
                 </viewController>
