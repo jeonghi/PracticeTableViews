@@ -12,20 +12,28 @@ class PopularCityViewController: UIViewController {
   
   let cellFileName = String(describing: PopularCityCollectionViewCell.self)
   var selectedTab: Tab = .모두
+  var searchText: String?
   var cityList: [City] {
+    var result = UserDefaultManager.popularCityList
+    if let searchText, !searchText.isEmpty {
+      result = result.filter{$0.hasKeyword(searchText)}
+    }
     switch selectedTab {
     case .모두:
-      return UserDefaultManager.popularCityList
+      return result
     case .국내:
-      return UserDefaultManager.popularCityList.filter({$0.domestic_travel})
+      return result
+        .filter({$0.domestic_travel})
     case .해외:
-      return UserDefaultManager.popularCityList.filter({!$0.domestic_travel})
+      return result
+        .filter({!$0.domestic_travel})
     }
   }
   
   // MARK: IBOutlet
   @IBOutlet var tab: UISegmentedControl!
   @IBOutlet var cityCollectionView: UICollectionView!
+  @IBOutlet weak var searchBar: UISearchBar!
   
   // MARK: IBAction
   @IBAction func selectSegment(_ tab: UISegmentedControl){
@@ -74,6 +82,19 @@ extension PopularCityViewController {
   override func viewWillAppear(_ animated: Bool) {
     print(#function)
   }
+  
+  func showFilteredResult(){
+    self.cityCollectionView.reloadData()
+  }
+}
+
+extension City {
+  func hasKeyword(_ word: String) -> Bool {
+    
+    let uppperedWord = word.uppercased()
+    
+    return self.city_english_name.uppercased().contains(uppperedWord) || self.city_name.uppercased().contains(uppperedWord) || self.city_explain.uppercased().contains(uppperedWord)
+  }
 }
 
 extension PopularCityViewController: UICollectionViewDelegate {
@@ -118,11 +139,32 @@ extension PopularCityViewController: UICollectionViewDataSource {
   }
 }
 
+extension PopularCityViewController: UISearchBarDelegate {
+  
+  /// 검색 버튼 클릭
+  func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+    searchText = searchBar.text
+    showFilteredResult()
+  }
+  
+  /// 취소 버튼 클릭
+  func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+    searchBar.text = nil
+  }
+  
+  /// 서치바 텍스트필드 변경 전
+  func searchBar(_ searchBar: UISearchBar, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
+    true
+  }
+}
+
 extension PopularCityViewController {
   
   private func connectDelegate(){
     cityCollectionView.dataSource = self
     cityCollectionView.delegate = self
+    
+    searchBar.delegate = self
   }
   
   private func configLayout() {
